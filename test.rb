@@ -54,13 +54,15 @@ db = sql('database.db')
 a=db.execute "CREATE TABLE IF NOT EXISTS Tasks(Id INTEGER PRIMARY KEY,
         Name VARCHAR,Status TEXT)"
 choice=0
-while (choice!=8)
+
+while (choice!= 8)
   puts "      "
   puts 'Enter your choice'
   choice = gets.chomp
   case choice
   when '1'
     puts 'Description of the task '
+    task = gets.chomp
       insertion(task)
   when '2'
     puts "All the data"
@@ -70,7 +72,7 @@ while (choice!=8)
     puts 'Enter the task number'
     t_no = gets.chomp
     a = sel_information(t_no)
-    puts "Id = #{a[0][0]} Name =#{a[0][1]} Status = #{a[0][2]} "
+    puts "Id = #{a[0][0]} Name = #{a[0][1]} Status = #{a[0][2]} "
   when '4'
     puts 'Enter the tak number'
     t_no = gets.chomp
